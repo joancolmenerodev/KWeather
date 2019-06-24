@@ -36,8 +36,6 @@ ext {
     espressoCoreVersion = '3.0.2'
     retrofitVersion = '2.6.0'
     gsonVersion = '2.8.5'
-    glideVersion = '4.9.0'
-    glideCompilerVersion = '4.9.0'
     kodeinVersion = '6.2.1'
     kodeinCoreVersion = '6.2.1'
     coroutinesCoreVersion = '1.1.1'
