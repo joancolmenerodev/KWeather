@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), CitiesListContract.View, KodeinAware {
 
     override fun showCitiesList(citiesListViewModel: List<CitiesListViewModel>) {
         linear_error_search.visibility = View.GONE
+        rv_citiesList.visibility = View.VISIBLE
         citiesAdapter = CitiesListAdapter(citiesList = citiesListViewModel)
         rv_citiesList.adapter = citiesAdapter
         rv_citiesList.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity(), CitiesListContract.View, KodeinAware {
 
     override fun showNoCityFound() {
         linear_error_search.visibility = View.VISIBLE
+        rv_citiesList.visibility = View.GONE
     }
 
 
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity(), CitiesListContract.View, KodeinAware {
     }
 
     override fun showError(errorMessage: String) {
+        linear_error_search.visibility = View.VISIBLE
         Snackbar.make(contraint_parent_main_activity, errorMessage, Snackbar.LENGTH_SHORT).show()
     }
 
