@@ -23,6 +23,26 @@ allprojects {
     }
 }
 
+ext {
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+    minSdkVersion = 16
+    targetSdkVersion = 28
+    constaintLayoutVersion = '1.1.3'
+    jUnitVersion = '4.12'
+    testRunnerVersion = '1.0.2'
+    supportLibraryVersion = '28.0.0'
+    mockitoCoreVersion = '2.15.0'
+    espressoCoreVersion = '3.0.2'
+    retrofitVersion = '2.6.0'
+    gsonVersion = '2.8.5'
+    glideVersion = '4.9.0'
+    glideCompilerVersion = '4.9.0'
+    kodeinVersion = '6.2.1'
+    kodeinCoreVersion = '6.2.1'
+    coroutinesCoreVersion = '1.1.1'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
