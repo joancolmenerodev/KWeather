@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KWeather</string>
+    <string name="hint_search_city">City name</string>
+    <string name="city_and_region_text">%s, %s</string>
+    <string name="temp_text">%s \u2103</string>
+    <string name="humidity_text">%s \%%</string>
+    <string name="cloudcoverage_text">%s \%%</string>
+    <string name="wind_text">%s m/s</string>
+    <string name="forecast_next_5_days">Next 5 days</string>
+    <string name="powered_by_accuweather">Powered by ©AccuWeather</string>
+</resources>

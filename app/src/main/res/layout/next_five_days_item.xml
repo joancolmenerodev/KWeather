@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:layout_centerInParent="true"
+              android:layout_centerHorizontal="true"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:gravity="center"
+              android:background="@android:color/transparent"
+              android:layout_marginRight="16dp"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              app:layout_goneMarginLeft="16dp"
+              android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textAllCaps="true"
+                  android:textColor="@color/white"
+                  android:id="@+id/tv_forecast_day_text"
+                  tools:text="Mon"/>
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/iv_item_forecast"
+                tools:src="@drawable/day_shower_rain"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:textColor="@color/white"
+        android:id="@+id/tv_forecast_temperature_text" tools:text="18º"/>
+    </LinearLayout>
+
