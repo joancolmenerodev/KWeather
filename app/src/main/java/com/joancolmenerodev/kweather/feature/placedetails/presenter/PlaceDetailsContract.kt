@@ -19,8 +19,8 @@ interface PlaceDetailsContract {
         fun displayCloudCover(cloudCover: Int)
         fun showProgressBarForecast(show: Boolean)
         fun displayForecast5Days(forecast5DaysViewModel: Forecast5DaysViewModel)
-        fun showProgressBar(visible: Boolean)
-        fun showError(error: String)
+        fun showProgressBar(isVisible: Boolean)
+        fun showError(errorMessage: String)
 
     }
 
