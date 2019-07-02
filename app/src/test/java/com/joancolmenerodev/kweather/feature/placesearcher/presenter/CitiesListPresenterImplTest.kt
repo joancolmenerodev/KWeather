@@ -57,7 +57,7 @@ class CitiesListPresenterImplTest {
         private const val HONOLULU_CITY = "Honolulu"
         private const val EMPTY_CITY = ""
 
-        private val citiesResult = arrayListOf<CitiesListViewModel>(
+        private val citiesResult = arrayListOf(
             CitiesListViewModel("1234","Honolulu","Ho")
         )
     }

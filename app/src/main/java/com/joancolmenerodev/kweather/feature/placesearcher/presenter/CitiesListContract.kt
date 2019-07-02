@@ -11,6 +11,8 @@ interface CitiesListContract {
         fun showNoCityFound()
         fun navigateToCityWeather(cityKey: String, cityAndRegionText: String)
         fun hideKeyboard()
+        fun showProgressBar(visible: Boolean)
+        fun showError(error: String)
     }
 
     interface Presenter : BasePresenter<View> {

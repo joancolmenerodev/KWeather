@@ -1,41 +1,38 @@
 package com.joancolmenerodev.kweather.feature.placesearcher.presenter
 
+import com.joancolmenerodev.kweather.base.ui.AbstractPresenter
 import com.joancolmenerodev.kweather.feature.placesearcher.usecases.GetCitiesListUseCase
 
-class CitiesListPresenterImpl(private val getCitiesListUseCase: GetCitiesListUseCase) : CitiesListContract.Presenter {
-
-    private var mView: CitiesListContract.View? = null
+class CitiesListPresenterImpl(private val getCitiesListUseCase: GetCitiesListUseCase) :
+    AbstractPresenter<CitiesListContract.View>(),CitiesListContract.Presenter {
 
     override fun findCity(city: String) {
-        mView?.hideKeyboard()
-        mView?.showProgressBar(true)
+        view?.hideKeyboard()
+        view?.showProgressBar(true)
         getCitiesListUseCase.invoke(city,
             {
-                mView?.showProgressBar(false)
+                view?.showProgressBar(false)
                 if(it.isNotEmpty()){
-                    mView?.showCitiesList(it)
+                    view?.showCitiesList(it)
                 }
                 else{
-                    mView?.showNoCityFound()
+                    view?.showNoCityFound()
                 }
 
             },
             {
-                mView?.showProgressBar(false)
-                mView?.showError(it.toString())
+                view?.showProgressBar(false)
+                view?.showError(it.toString())
             })
     }
 
     override fun onCityClicked(cityKey: String, cityAndRegionText: String) {
-        mView?.navigateToCityWeather(cityKey, cityAndRegionText)
+        view?.navigateToCityWeather(cityKey, cityAndRegionText)
     }
 
-    override fun attachView(view: CitiesListContract.View) {
-        mView = view
-    }
-
-    override fun detachView() {
+    override fun onViewDetached() {
+        super.onViewDetached()
         getCitiesListUseCase.dispose()
-        mView = null
     }
+
 }
