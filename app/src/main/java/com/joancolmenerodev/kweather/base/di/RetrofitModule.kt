@@ -16,7 +16,7 @@ val retrofitModule = Kodein.Module("retrofitModule" ){
     }
     bind<Retrofit>() with singleton {
         Retrofit.Builder()
-            .baseUrl("http://dataservice.accuweather.com/")
+            .baseUrl("https://dataservice.accuweather.com/")
             .client(instance())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

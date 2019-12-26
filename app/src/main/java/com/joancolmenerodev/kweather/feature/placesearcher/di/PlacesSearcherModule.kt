@@ -7,11 +7,12 @@ import com.joancolmenerodev.kweather.feature.placesearcher.usecases.GetCitiesLis
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
+import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
 
 val placesSearcherModule = Kodein.Module("PlacesSearcherModule"){
 
     bind<CitiesListRepositoryImpl>() with singleton { CitiesListRepositoryImpl(instance()) }
-    bind<CitiesListContract.Presenter>() with singleton { CitiesListPresenterImpl(instance()) }
+    bind<CitiesListContract.Presenter>() with provider { CitiesListPresenterImpl(instance()) }
     bind<GetCitiesListUseCase>() with singleton { GetCitiesListUseCase(instance()) }
 }

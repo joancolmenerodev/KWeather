@@ -5,8 +5,6 @@ import com.joancolmenerodev.kweather.feature.placesearcher.usecases.GetCitiesLis
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
@@ -38,19 +36,8 @@ class CitiesListPresenterImplTest {
         presenter.findCity(HONOLULU_CITY)
 
         //Assert
-        Mockito.verify(view).showCitiesList(citiesResult)
-    }
-
-    @Test
-    fun onCityClicked() {
-    }
-
-    @Test
-    fun attachView() {
-    }
-
-    @Test
-    fun detachView() {
+        Mockito.verify(view).hideKeyboard()
+        Mockito.verify(view).showProgressBar(true)
     }
 
     companion object {
